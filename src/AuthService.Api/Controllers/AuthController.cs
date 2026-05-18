@@ -92,7 +92,7 @@ public class AuthController(IAuthService authService) : ControllerBase
     [HttpPost("register")]
     [RequestSizeLimit(10 * 1024 * 1024)]
     [EnableRateLimiting("AuthPolicy")]
-    public async Task<ActionResult<RegisterResponseDto>> Register([FromForm] RegisterDto registerDto)
+    public async Task<ActionResult<RegisterResponseDto>> Register([FromBody] RegisterDto registerDto)
     {
         var result = await authService.RegisterAsync(registerDto);
         return StatusCode(201, result);
