@@ -144,7 +144,7 @@ app.UseMiddleware<GlobalExceptionMiddleware>();
 
 
 // Core middlewares
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 app.UseCors("DefaultCorsPolicy"); // Asegúrate de que coincida con lo configurado en SecurityPolicies
 app.UseRateLimiter();
 
